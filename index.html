@@ -31,6 +31,7 @@
             <option value="Tagihan">Tagihan</option>
             <option value="Hiburan">Hiburan</option>
             <option value="Kesehatan">Kesehatan</option>
+            <option value="Pendidikan">Pendidikan</option>
             <option value="Lainnya">Lainnya</option>
           </select>
         </div>
@@ -55,95 +56,63 @@
       <p id="total">IDR 0</p>
     </section>
 
-    <section class="card monthly-card">
-  <div class="monthly-header">
-    <h2>Ringkasan Bulanan</h2>
+    <section class="card dashboard-card">
+      <div class="dashboard-header">
+        <div>
+          <h2>Dashboard Visual</h2>
+          <p id="dashboard-period" class="dashboard-period">-</p>
+        </div>
+        <div class="monthly-controls">
+          <label for="month-picker">Pilih Bulan</label>
+          <input type="month" id="month-picker" />
+        </div>
+      </div>
 
-    <div class="monthly-controls">
-        <label for="month-picker">Pilih Bulan</label>
-        <input type="month" id="month-picker" />
-    </div>
-  </div>
+      <div class="dashboard-grid">
+        <div class="dashboard-item dashboard-item-primary">
+          <span class="dashboard-label">Total Bulan Terpilih</span>
+          <strong id="dashboard-total" class="dashboard-value">IDR 0</strong>
+          <small class="dashboard-subtext">Akumulasi semua pengeluaran</small>
+        </div>
 
-    <p id="monthly-period" class="monthly-period-text">-</p>
-  </div>
+        <div class="dashboard-item">
+          <span class="dashboard-label">Jumlah Transaksi</span>
+          <strong id="dashboard-count" class="dashboard-value">0</strong>
+          <small class="dashboard-subtext">Transaksi di bulan ini</small>
+        </div>
 
-  <div class="monthly-summary">
-    <div class="summary-item">
-      <span class="summary-label">Total Bulan Ini</span>
-      <strong id="monthly-total" class="summary-value">IDR 0</strong>
-    </div>
+        <div class="dashboard-item">
+          <span class="dashboard-label">Kategori Terbesar</span>
+          <strong id="dashboard-top-category" class="dashboard-value">-</strong>
+          <small id="dashboard-top-category-amount" class="dashboard-subtext">-</small>
+        </div>
 
-    <div class="summary-item">
-      <span class="summary-label">Jumlah Transaksi</span>
-      <strong id="monthly-count" class="summary-value">0</strong>
-    </div>
+        <div class="dashboard-item">
+          <span class="dashboard-label">Pengeluaran Terbesar</span>
+          <strong id="dashboard-highest-expense" class="dashboard-value">-</strong>
+          <small id="dashboard-highest-expense-amount" class="dashboard-subtext">-</small>
+        </div>
+      </div>
+    </section>
 
-    <div class="summary-item">
-      <span class="summary-label">Kategori Terbesar</span>
-      <strong id="top-category" class="summary-value">-</strong>
-      <small id="top-category-amount" class="summary-subtext">-</small>
-    </div>
+    <section class="card">
+      <h2>Smart Insight</h2>
+      <p id="insight-box">-</p>
+    </section>
 
-    <div class="summary-item">
-      <span class="summary-label">Pengeluaran Terbesar</span>
-      <strong id="highest-expense" class="summary-value">-</strong>
-      <small id="highest-expense-amount" class="summary-subtext">-</small>
-    </div>
-  </div>
-</section>
+    <div class="chart-row">
+      <section class="card chart-card">
+        <h2>Visual Kategori (Pie Chart)</h2>
+        <canvas id="categoryChart"></canvas>
+      </section>
 
-<section class="card dashboard-card">
-  <div class="dashboard-header">
-    <div>
-      <h2>Dashboard Visual</h2>
-      <p id="dashboard-period" class="dashboard-period">-</p>
-    </div>
-  </div>
-
-  <div class="dashboard-grid">
-    <div class="dashboard-item dashboard-item-primary">
-      <span class="dashboard-label">Total Bulan Terpilih</span>
-      <strong id="dashboard-total" class="dashboard-value">IDR 0</strong>
-      <small class="dashboard-subtext">Akumulasi semua pengeluaran</small>
-    </div>
-
-    <div class="dashboard-item">
-      <span class="dashboard-label">Jumlah Transaksi</span>
-      <strong id="dashboard-count" class="dashboard-value">0</strong>
-      <small class="dashboard-subtext">Transaksi di bulan ini</small>
+      <section class="card chart-card right">
+        <h2>Trend Harian</h2>
+        <canvas id="dailyChart"></canvas>
+      </section>
     </div>
 
-    <div class="dashboard-item">
-      <span class="dashboard-label">Kategori Terbesar</span>
-      <strong id="dashboard-top-category" class="dashboard-value">-</strong>
-      <small id="dashboard-top-category-amount" class="dashboard-subtext">-</small>
-    </div>
-
-    <div class="dashboard-item">
-      <span class="dashboard-label">Pengeluaran Terbesar</span>
-      <strong id="dashboard-highest-expense" class="dashboard-value">-</strong>
-      <small id="dashboard-highest-expense-amount" class="dashboard-subtext">-</small>
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>Visual Kategori (Pie Chart)</h2>
-  <canvas id="categoryChart"></canvas>
-</section>
-
-<section class="card">
-  <h2>Smart Insight</h2>
-  <p id="insight-box">-</p>
-</section>
-
-<section class="card">
-  <h2>Trend Harian</h2>
-  <canvas id="dailyChart"></canvas>
-</section>
-
-<section class="card breakdown-card">
+    <section class="card breakdown-card">
   <div class="breakdown-header">
     <h2>Breakdown Kategori Bulanan</h2>
     <p class="breakdown-caption">Distribusi pengeluaran berdasarkan kategori</p>
@@ -176,6 +145,7 @@
             <option value="Tagihan">Tagihan</option>
             <option value="Hiburan">Hiburan</option>
             <option value="Kesehatan">Kesehatan</option>
+            <option value="Pendidikan">Pendidikan</option>
             <option value="Lainnya">Lainnya</option>
           </select>
         </div>
@@ -205,8 +175,12 @@
 <section class="card">
   <h2>Import Data</h2>
 
-  <input type="file" accept=".json" onchange="importJSON(event)" />
+  <input type="file" accept=".json,.csv" onchange="importData(event)" />
 </section>
+
+<p class="hint">
+  Support: JSON (backup) & CSV (Excel export)
+</p>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
