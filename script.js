@@ -550,6 +550,8 @@ function setupUiHandlers() {
     expenses.push(newExpense);
     saveExpenses(); renderExpenses(); updateTotal(); refreshAnalyticsUI();
     expenseForm.reset(); message.textContent = 'Pengeluaran berhasil ditambahkan.';
+
+    if(typeof toggleModal === 'function') toggleModal('addModal'); 
   });
 
   expenseList.addEventListener('click', function (ev) {
