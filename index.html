@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <header class="header">
+        <h1>Daily Expense Tracker</h1>
+        <p>Catat pengeluaran harianmu dengan mudah dan rapi.</p>
+        </header>
+
+        <section class="card">
+            <h2>Tambah Pengeluaran</h2>
+        
+            <form id="expense-form">
+                <label for="title">Nama Pengeluaran:</label>
+                <input type="text" id="title" placeholder="Contoh: Makan Siang">
+             </div>
+             
+             <div class="form-group">
+                <label for="category">Kategori</label>
+                <select id="category">
+                    <option value="">Pilih kategori</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Belanja">Belanja</option>
+                    <option value="Tagihan">Tagihan</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Nominal</label>
+                <input type="number" id="amount" placeholder="Contoh: 25000" />
+            </div>
+
+            <button type="submit" class="btn-primary">Tambah Pengeluaran</button>
+            <p id="message" class="message"></p>
+        </form>
+    </section>
+    
+    <section class="card summary">
+      <h2>Total Pengeluaran</h2>
+      <p id="total">IDR 0</p>
+    </section>
+
+    <section class="card">
+      <h2>Daftar Pengeluaran</h2>
+      <div id="expense-list" class="expense-list">
+        <p class="empty-text">Belum ada pengeluaran.</p>
+      </div>
+    </section>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
